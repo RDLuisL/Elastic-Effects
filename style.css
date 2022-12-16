@@ -1,3 +1,5 @@
+
+/* Paleta de Color */
 :root {
     --backgrnd1: #111;
     --backgrnd2: #222;
@@ -7,13 +9,13 @@
     --lncolor3: #ff0;
     --ball3d: rgba(0,0,0,0.5);
 }
-
+/* Quitando los margenes por default */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+/* Caracteristicas del body */
 body {
     display: flex;
     justify-content: center;
@@ -21,17 +23,17 @@ body {
     min-height: 100vh;
     background-color: var(--backgrnd1);
 }
-
+/* Contenedor elastic */
 .elastic {
-    position: absolute;
+    position: relative;
     width: 400px;
     height: 400px;
-    background-color: var(--backgrnd2);
+    /* background-color: var(--backgrnd2); */
     display: flex;
     justify-content: center;
     align-items: flex-end;
 }
-
+/* Punto pivote de la izquierda */
 .elastic::before{
     content: '';
     position: absolute;
@@ -43,8 +45,9 @@ body {
     border-radius: 50%;
     z-index: 1; 
 }
-
-.elastic::after{
+/* Punto pivote de la derecha */
+.elastic::after
+{
     content: '';
     position: absolute;
     bottom: 62.5px;
@@ -59,7 +62,8 @@ body {
 .elastic svg {
     position: absolute;
     width: 400px;
-    height: 400px;
+    height: 150px;
+    fill: none;
 }
 
 .elastic svg:nth-child(2){
@@ -72,52 +76,54 @@ body {
     stroke-width: 10;
     stroke-linecap: round;
     d: path("M 10 80 Q 190 80 390 80");
-    animation: animate 2.5s linear infinite animateColor 2.5s linear infinite;
+    animation: animate 2.5s linear infinite, animateColor 2.5s linear infinite;
 }
 
-@keyframes animate {
+@keyframes animate 
+{
    0%
    {
-    d: path("M 10 80 Q 190 80 390 80")
+    d: path("M 10 80 Q 190 80 390 80");
    } 
    10%
    {
-    d: path("M 10 80 Q 190 160 390 80")
+    d: path("M 10 80 Q 190 160 390 80");
    }
    20%
    {
-    d: path("M 10 80 Q 190 20 390 80")
+    d: path("M 10 80 Q 190 20 390 80");
    }  
    30%
    {
-    d: path("M 10 80 Q 190 120 390 80")
+    d: path("M 10 80 Q 190 120 390 80");
    } 
    35%
    {
-    d: path("M 10 80 Q 190 100 390 80")
+    d: path("M 10 80 Q 190 100 390 80");
    }
    40%
    {
-    d: path("M 10 80 Q 190 80 390 80")
+    d: path("M 10 80 Q 190 80 390 80");
    }
    50%
    {
-    d: path("M 10 80 Q 190 100 390 80")
+    d: path("M 10 80 Q 190 100 390 80");
    } 
    55%
    {
-    d: path("M 10 80 Q 190 90 390 80")
+    d: path("M 10 80 Q 190 90 390 80");
    }
    60%
    {
-    d: path("M 10 80 Q 190 80 390 80")
-   }    
+    d: path("M 10 80 Q 190 80 390 80");
+   }
 }
 
-@keyframes animateColor {
+ @keyframes animateColor 
+{
     0%,100%
     {
-    stroke: var(--lncolor);
+    stroke: var(--lncolor1);
     }
     33.33%
     {
